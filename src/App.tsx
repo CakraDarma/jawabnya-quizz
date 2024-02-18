@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
 	return (
-		<React.Fragment>
+		<>
 			<ToastContainer
 				position='bottom-right'
 				limit={1}
@@ -15,7 +15,7 @@ const App = () => {
 				pauseOnHover={false}
 			/>
 			<MainLayout />
-		</React.Fragment>
+		</>
 	);
 };
 export default App;

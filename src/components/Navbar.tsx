@@ -7,14 +7,15 @@ import {
 	Dropdown,
 	DropdownMenu,
 	Avatar,
+	Image,
 } from '@nextui-org/react';
 
 export const Nav = () => {
 	return (
-		<Navbar className='bg-white'>
+		<Navbar className='bg-white border-b-4 border-black'>
 			<NavbarBrand>
-				{/* <AcmeLogo /> */}
-				<p className='font-bold text-inherit'>Jawabnya</p>
+				<h1 className='text-xl'>Jawabnya</h1>
+				<Image width={30} alt='NextUI hero Image' src='images/logo.png' />
 			</NavbarBrand>
 
 			<NavbarContent as='div' justify='end'>
@@ -35,6 +36,7 @@ export const Nav = () => {
 							<p className='font-semibold'>cakradarma@example.com</p>
 						</DropdownItem>
 						<DropdownItem key='settings'>My Settings</DropdownItem>
+						<DropdownItem key='settings'>Results</DropdownItem>
 						<DropdownItem key='logout' color='danger'>
 							Log Out
 						</DropdownItem>
