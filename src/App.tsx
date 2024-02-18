@@ -14,7 +14,6 @@ const App = () => {
 				draggable={true}
 				pauseOnHover={false}
 			/>
-
 			<MainLayout />
 		</React.Fragment>
 	);

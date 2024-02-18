@@ -6,7 +6,7 @@ import {
 	Select,
 	SelectItem,
 } from '@nextui-org/react';
-import LoadingSpinner from '@components/loading';
+import LoadingSpinner from '@components/Loading';
 import {
 	questionDiffSetting,
 	questionNumberSetting,
@@ -80,89 +80,84 @@ const InitialView: React.FC = () => {
 			{loading && <LoadingSpinner />}
 
 			{!loading && (
-				<>
-					<h2>Select Mode Quizz</h2>
-					<Card
-						// isBlurred
-						className='border-none bg-red-300  w-[810px]'
-						shadow='sm'
-					>
-						<CardHeader className='flex-col items-start px-4 pt-2 pb-0'>
-							<h4 className='font-bold text-large'>Frontend Radio</h4>
-						</CardHeader>
-						<CardBody className='py-2 overflow-visible'>
-							<form
-								onSubmit={handleSubmit((data) => loadQuestions(data))}
-								className='flex flex-col w-full p-4 my-6 mb-3 text-lg border-b-2 rounded border-primary bg-content'
-							>
-								<div className='flex flex-col gap-2'>
-									<h3 className='text-default-500 text-small'>
-										Number of Questions
-									</h3>
-									<Select
-										label='Select number of questions'
-										className='max-w-xs'
-										{...register('questionNumber')}
-									>
-										{questionNumberSetting.map((option) => (
-											<SelectItem key={option.code} value={option.code}>
-												{option.label}
-											</SelectItem>
-										))}
-									</Select>
-								</div>
-								<div className='flex flex-col gap-2'>
-									<h3 className='text-default-500 text-small'>Difficulty</h3>
-									<Select
-										label='Select Difficulty'
-										className='max-w-xs'
-										{...register('questionDifficulty')}
-									>
-										{questionDiffSetting.map((option) => (
-											<SelectItem key={option.code} value={option.code}>
-												{option.label}
-											</SelectItem>
-										))}
-									</Select>
-								</div>
-								<div className='flex flex-col gap-2'>
-									<h3 className='text-default-500 text-small'>Category</h3>
-									<Select
-										label='Select Cateogry'
-										className='max-w-xs'
-										{...register('questionCategory')}
-									>
-										{categories.map((option) => (
-											<SelectItem key={option.code} value={option.code}>
-												{option.label}
-											</SelectItem>
-										))}
-									</Select>
-								</div>
-								<div className='flex flex-col gap-2'>
-									<h3 className='text-default-500 text-small'>Type</h3>
-									<Select
-										label='Select type of questions'
-										className='max-w-xs'
-										{...register('questionType')}
-									>
-										{questionTypeSetting.map((option) => (
-											<SelectItem key={option.code} value={option.code}>
-												{option.label}
-											</SelectItem>
-										))}
-									</Select>
-								</div>
+				<div className='w-full '>
+					<div className='flex flex-col items-center w-full mb-4'>
+						<h1 className='text-5xl border-b-4 border-black '>
+							Select Mode Quizz
+						</h1>
+					</div>
+					<div className='w-full '>
+						<form
+							onSubmit={handleSubmit((data) => loadQuestions(data))}
+							className='flex flex-col w-full my-6'
+						>
+							<div className='flex flex-col gap-2'>
+								<h3 className='text-default-500 text-small'>
+									Number of Questions
+								</h3>
+								<Select
+									label='Select number of questions'
+									className='max-w-xs'
+									{...register('questionNumber')}
+								>
+									{questionNumberSetting.map((option) => (
+										<SelectItem key={option.code} value={option.code}>
+											{option.label}
+										</SelectItem>
+									))}
+								</Select>
+							</div>
+							<div className='flex flex-col gap-2'>
+								<h3 className='text-default-500 text-small'>Difficulty</h3>
+								<Select
+									label='Select Difficulty'
+									className='max-w-xs'
+									{...register('questionDifficulty')}
+								>
+									{questionDiffSetting.map((option) => (
+										<SelectItem key={option.code} value={option.code}>
+											{option.label}
+										</SelectItem>
+									))}
+								</Select>
+							</div>
+							<div className='flex flex-col gap-2'>
+								<h3 className='text-default-500 text-small'>Category</h3>
+								<Select
+									label='Select Cateogry'
+									className='max-w-xs'
+									{...register('questionCategory')}
+								>
+									{categories.map((option) => (
+										<SelectItem key={option.code} value={option.code}>
+											{option.label}
+										</SelectItem>
+									))}
+								</Select>
+							</div>
+							<div className='flex flex-col gap-2'>
+								<h3 className='text-default-500 text-small'>Type</h3>
+								<Select
+									label='Select type of questions'
+									className='max-w-xs'
+									{...register('questionType')}
+								>
+									{questionTypeSetting.map((option) => (
+										<SelectItem key={option.code} value={option.code}>
+											{option.label}
+										</SelectItem>
+									))}
+								</Select>
+							</div>
 
-								<div className='form__actions'>
-									<Button type='submit' className=''>
-										Start Quizz
-									</Button>
-								</div>
-							</form>
-						</CardBody>
-					</Card>
-				</>
+							<div className='form__actions'>
+								<Button type='submit' className=''>
+									Start Quizz
+								</Button>
+							</div>
+						</form>
+					</div>
+				</div>
 			)}
 		</>
 	);

@@ -11,7 +11,7 @@ import {
 
 export const Nav = () => {
 	return (
-		<Navbar>
+		<Navbar className='bg-white'>
 			<NavbarBrand>
 				{/* <AcmeLogo /> */}
 				<p className='font-bold text-inherit'>Jawabnya</p>
