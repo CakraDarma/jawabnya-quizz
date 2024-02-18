@@ -1,11 +1,4 @@
-import {
-	Button,
-	Card,
-	CardBody,
-	CardHeader,
-	Select,
-	SelectItem,
-} from '@nextui-org/react';
+import { Select, SelectItem } from '@nextui-org/react';
 import LoadingSpinner from '@components/Loading';
 import {
 	questionDiffSetting,

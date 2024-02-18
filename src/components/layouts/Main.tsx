@@ -1,9 +1,7 @@
-import { Button } from '@nextui-org/react';
 import LoadingSpinner from '@components/Loading';
 import { Nav } from '@components/Navbar';
 import { gameViews } from '@constants/game';
-import { QUIT_GAME } from '@constants/strings';
-import { getCategories, setView } from '@store/features/game';
+import { getCategories } from '@store/features/game';
 import { useAppDispatch, useAppSelector } from '@store/index';
 import GamePage from '@views/Game';
 import InitialPage from '@views/Initial';
@@ -32,11 +30,9 @@ const MainLayout: React.FC = () => {
 				});
 	}, [dispatch, initialized]);
 
-	const handleEndGame = () => dispatch(setView(gameViews.END));
-
 	return (
 		<div className=''>
-			{isFillingForm && <Nav />}
+			<Nav />
 			<main className='px-6 lg:px-20 3xl:px-0  mx-auto max-w-[1280px]'>
 				{loading ? (
 					<div className='flex flex-row items-center justify-center w-full h-screen'>
@@ -48,12 +44,6 @@ const MainLayout: React.FC = () => {
 						{isPlaying && <GamePage />}
 						{isComplete && <ScorePage />}
 					</>
-				)}
-
-				{isPlaying && (
-					<Button className='absolute top-4 right-4' onClick={handleEndGame}>
-						{QUIT_GAME}
-					</Button>
 				)}
 			</main>
 		</div>

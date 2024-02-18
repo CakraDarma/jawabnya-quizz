@@ -1,14 +1,14 @@
 import { useAppSelector } from '@store/index';
-import React from 'react';
 
-const Description: React.FC = () => {
-  const description = useAppSelector((state) => state.game.currectQuestionDescription);
+const Description = () => {
+	const description = useAppSelector(
+		(state) => state.game.currectQuestionDescription
+	);
 
-  // Key is added here to force re-render the node in order for the animation to play
-  return (
-    <h3 className="game__question-description" key={description}>
-      {description}
-    </h3>
-  )
-}
+	return (
+		<h2 className='text-2xl font-extrabold sm:text-4xl' key={description}>
+			{description}
+		</h2>
+	);
+};
 export default Description;

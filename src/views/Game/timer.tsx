@@ -1,48 +1,15 @@
-import { gameDuration, gameEndingIndicator } from '@constants/game';
 import { useAppSelector } from '@store/index';
-import classnames from 'classnames';
-import React from 'react';
+import { ImClock } from 'react-icons/im';
 
-const circumference = 2 * 3.14 * 68;
+const Timer = () => {
+	const timeLeft = useAppSelector((state) => state.game.timeLeft);
 
-const Timer: React.FC = () => {
-  const timeLeft = useAppSelector((state) => state.game.timeLeft);
-
-  const offset = circumference * ((gameDuration - timeLeft) / gameDuration);
-
-  return (
-    <svg className="game__timer" width="160" height="160" viewBox="0 0 160 160" style={{ rotate: "-90deg" }}>
-      <circle
-        className="game__timer-bg"
-        r="68"
-        cx="80"
-        cy="80"
-        fill="transparent"
-        strokeWidth="22px"
-      />
-      <circle
-        className="game__timer-bar"
-        r="68"
-        cx="80"
-        cy="80"
-        fill="transparent"
-        strokeWidth="12px"
-        strokeDasharray={circumference}
-        strokeDashoffset={offset}
-      />
-      <text
-        key={timeLeft}
-        className={classnames("game__timer-text", { "animate-heartbeat": gameEndingIndicator >= timeLeft })}
-        x="50%"
-        y="50%"
-        dominantBaseline="central"
-        textAnchor="middle"
-      >
-        {timeLeft}
-      </text>
-
-    </svg>
-  );
-}
+	return (
+		<div className='flex flex-row items-center gap-1'>
+			<h4 className='text-xl'>{timeLeft}</h4>
+			<ImClock size={20} />
+		</div>
+	);
+};
 
 export default Timer;
