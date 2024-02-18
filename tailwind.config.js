@@ -11,16 +11,16 @@ export default {
 	safelist: [],
 	theme: {
 		extend: {
+			fontFamily: {
+				Cabinet: ['CabinetGrotesk-Variable', 'sans-serif'],
+			},
 			colors: {
-				text: '#0a0907',
-				background: '#f6f5f3',
-				primary: '#d17d29',
-				secondary: '#b5c4af',
-				accent: '#92af97',
-				danger: '#FA6D5C',
-				success: '#89FA5C',
-				layout: '#949494',
-				content: '#363636',
+				text: '#151515',
+				background: '#FFF9E4',
+				'pink-custom': '#F03986',
+				'green-custom': '#43DD65',
+				'yellow-custom': '#F2CA3C',
+				'blue-custom': '#3C9BF2',
 			},
 			animation: {
 				'fade-in': 'fadeIn 250ms ease-in',

@@ -3,6 +3,27 @@
 @tailwind utilities;
 
 @layer base {
+	@font-face {
+		font-family: 'CabinetGrotesk-Variable';
+		src: url('./assets/fonts/CabinetGrotesk-Variable.ttf') format('truetype');
+		font-weight: 100 900;
+		font-display: swap;
+		font-style: normal;
+	}
+
+	h1 {
+		@apply font-extrabold font-Cabinet text-text;
+	}
+
+	h2,
+	h3,
+	h4 {
+		@apply font-bold font-Cabinet text-text;
+	}
+
+	p {
+		@apply font-medium font-Cabinet text-text;
+	}
 }
 
 @layer components {
@@ -12,7 +33,7 @@
 
 	#root {
 		@apply h-dvh;
-		@apply font-mono;
+		@apply font-bold font-Cabinet;
 		@apply flex flex-col justify-between;
 	}
 
@@ -22,22 +43,6 @@
 		/* justify-center*/
 		@apply overflow-auto;
 		@apply px-3 py-0;
-	}
-
-	h2 {
-		@apply my-4;
-		@apply text-3xl;
-		@apply text-primary;
-	}
-
-	.view__layout {
-	}
-
-	.form__body {
-		@apply border-b-2 rounded border-primary;
-		@apply p-4 my-6;
-		@apply bg-content;
-		@apply text-lg;
 	}
 
 	.form__actions {

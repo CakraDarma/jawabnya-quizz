@@ -1,4 +1,4 @@
-import Button from '@components/button';
+import { Button } from '@nextui-org/react';
 import LoadingSpinner from '@components/loading';
 import { Nav } from '@components/Navbar';
 import { gameViews } from '@constants/game';
@@ -35,30 +35,27 @@ const MainLayout: React.FC = () => {
 	const handleEndGame = () => dispatch(setView(gameViews.END));
 
 	return (
-		<React.Fragment>
+		<>
 			{isFillingForm && <Nav />}
 
 			<main>
 				{loading ? (
 					<LoadingSpinner />
 				) : (
-					<React.Fragment>
+					<>
 						{isFillingForm && <InitialPage />}
 						{isPlaying && <GamePage />}
 						{isComplete && <ScorePage />}
-					</React.Fragment>
+					</>
 				)}
 
 				{isPlaying && (
-					<Button
-						className='absolute btn-error top-4 right-4'
-						onClick={handleEndGame}
-					>
+					<Button className='absolute top-4 right-4' onClick={handleEndGame}>
 						{QUIT_GAME}
 					</Button>
 				)}
 			</main>
-		</React.Fragment>
+		</>
 	);
 };
 export default MainLayout;
