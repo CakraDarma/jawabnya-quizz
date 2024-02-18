@@ -1,27 +1,26 @@
-import { Button } from '@nextui-org/react';
-import {
-	RESULTS_ANSWER_CHOICE,
-	RESULTS_REVEAL_ANSWER,
-} from '@constants/strings';
 import type { Answer } from '@models/game';
 import React from 'react';
 import classnames from 'classnames';
 
 interface PropTypes {
 	answer: Answer;
+	number: number;
 }
 
-const ResultsAnswer: React.FC<PropTypes> = ({ answer }) => {
-	const [isRevealed, setIsRevealed] = React.useState<boolean>(false);
+const ResultsAnswer: React.FC<PropTypes> = ({ answer, number }) => {
 	const { question, is_correct: isCorrect, correct_answer } = answer;
 
-	const handleRevealAnswer = () => setIsRevealed(true);
-
 	return (
-		<div className='results__answer'>
-			<p>{question}</p>
+		<div className='flex flex-col mt-5'>
 			<p>
-				{RESULTS_ANSWER_CHOICE}
+				<span>
+					{number}
+					{')  '}
+				</span>
+				{question}
+			</p>
+			<p>
+				Your answer
 				{': '}
 				<span
 					className={classnames({
@@ -32,19 +31,14 @@ const ResultsAnswer: React.FC<PropTypes> = ({ answer }) => {
 					{answer.answer.text}
 				</span>
 			</p>
-
 			{!isCorrect && (
-				<React.Fragment>
-					{!isRevealed && (
-						<Button className='' onClick={handleRevealAnswer}>
-							{RESULTS_REVEAL_ANSWER}
-						</Button>
-					)}
-
-					{isRevealed && (
-						<p className='results__reveal-correct'>{correct_answer.text}</p>
-					)}
-				</React.Fragment>
+				<p>
+					Correct Answer
+					{': '}
+					<span className={classnames('text-success')}>
+						{correct_answer.text}
+					</span>
+				</p>
 			)}
 		</div>
 	);
