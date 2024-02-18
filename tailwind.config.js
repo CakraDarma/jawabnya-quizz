@@ -1,5 +1,6 @@
-import { nextui } from '@nextui-org/react';
 /** @type {import('tailwindcss').Config} */
+import { nextui } from '@nextui-org/react';
+
 export default {
 	darkMode: 'class',
 	content: [
@@ -11,26 +12,15 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: {
-					DEFAULT: 'hsl(var(--color-primary) / <alpha-value>)',
-				},
-				danger: {
-					DEFAULT: 'hsl(var(--color-danger) / <alpha-value>)',
-				},
-				success: {
-					DEFAULT: 'hsl(var(--color-success) / <alpha-value>)',
-				},
-				layout: {
-					DEFAULT: 'hsl(var(--layout) / <alpha-value>)',
-					contrast: 'hsl(var(--layout-contrast) / <alpha-value>)',
-				},
-				content: {
-					DEFAULT: 'hsl(var(--content) / <alpha-value>)',
-					contrast: 'hsl(var(--content-contrast) / <alpha-value>)',
-				},
-				background: {
-					DEFAULT: 'hsl(var(--background) / <alpha-value>)',
-				},
+				text: '#0a0907',
+				background: '#f6f5f3',
+				primary: '#d17d29',
+				secondary: '#b5c4af',
+				accent: '#92af97',
+				danger: '#FA6D5C',
+				success: '#89FA5C',
+				layout: '#949494',
+				content: '#363636',
 			},
 			animation: {
 				'fade-in': 'fadeIn 250ms ease-in',

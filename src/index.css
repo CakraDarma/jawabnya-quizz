@@ -3,118 +3,65 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 226deg 100% 97%;
-    --color-primary: 239deg 84% 67%;
-    --color-danger: 4deg 83% 52%;
-    --color-success: 115deg 100% 28%;
-    --layout: 239deg 84% 67%;
-    --layout-contrast: 0deg 0% 100%;
-    --content: 0deg 0% 100%;
-    --content-contrast: 0deg 0% 0%;
-
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: 0deg 0% 9%;
-      --color-primary: 32deg 90% 52%;
-      --color-danger: 4deg 83% 52%;
-      --color-success: 150deg 41% 32%;
-      --layout: 0deg 0% 19%;
-      --layout-contrast: 0deg 0% 100%;
-      --content: 0deg 0% 19%;
-      --content-contrast: 0deg 0% 100%;
-    }
-  }
-
-  :root.dark {
-    --background: 0deg 0% 9%;
-    --color-primary: 32deg 90% 52%;
-    --color-danger: 4deg 83% 52%;
-    --color-success: 150deg 41% 32%;
-    --layout: 0deg 0% 19%;
-    --layout-contrast: 0deg 0% 100%;
-    --content: 0deg 0% 19%;
-    --content-contrast: 0deg 0% 100%;
-  }
-
-  :root.light {
-    --background: 226deg 100% 97%;
-    --color-primary: 239deg 84% 67%;
-    --color-danger: 4deg 83% 52%;
-    --color-success: 115deg 100% 28%;
-    --layout: 239deg 84% 67%;
-    --layout-contrast: 0deg 0% 100%;
-    --content: 0deg 0% 100%;
-    --content-contrast: 0deg 0% 0%;
-  }
 }
 
 @layer components {
+	body {
+		@apply bg-background;
+	}
 
-  body {
-    @apply bg-background;
-  }
+	#root {
+		@apply h-dvh;
+		@apply font-mono;
+		@apply flex flex-col justify-between;
+	}
 
-  #root {
-    @apply h-dvh;
-    @apply font-mono;
-    @apply flex flex-col justify-between;
-  }
+	main {
+		@apply flex-1;
+		@apply flex flex-col items-center;
+		/* justify-center*/
+		@apply overflow-auto;
+		@apply px-3 py-0;
+	}
 
-  main {
-    @apply flex-1;
-    @apply flex flex-col items-center;
-    /* justify-center*/
-    @apply overflow-auto;
-    @apply px-3 py-0;
-  }
+	h2 {
+		@apply my-4;
+		@apply text-3xl;
+		@apply text-primary;
+	}
 
-  h2 {
-    @apply my-4;
-    @apply text-3xl;
-    @apply text-primary;
-  }
+	.view__layout {
+	}
 
-  .view__layout {}
+	.form__body {
+		@apply border-b-2 rounded border-primary;
+		@apply p-4 my-6;
+		@apply bg-content;
+		@apply text-lg;
+	}
 
-  .form__body {
-    @apply border-b-2 border-primary rounded;
-    @apply my-6 p-4;
-    @apply bg-content;
-    @apply text-lg;
-  }
+	.form__actions {
+		@apply mx-auto;
+	}
 
-  .form__actions {
-    @apply mx-auto;
-  }
+	.form__group {
+		@apply w-full;
+		@apply mb-4 last:mb-1;
+	}
 
-  .form__group {
-    @apply w-full;
-    @apply mb-4 last:mb-1;
-  }
+	.form__group-label {
+		@apply block;
+		/* @apply inline-block; */
+		@apply mb-3;
+		@apply text-primary;
+	}
 
-  .form__group-label {
-    @apply block;
-    /* @apply inline-block; */
-    @apply mb-3;
-    @apply text-primary;
-  }
-
-  .form__group-control {
-    @apply w-full;
-    @apply py-1 px-3;
-    @apply border border-gray-300 rounded;
-    @apply bg-content;
-    @apply text-content-contrast;
-    @apply focus:outline-none focus:ring-2 focus:ring-gray-200;
-  }
-
-  footer {
-    @apply justify-self-end;
-    @apply bg-layout;
-    @apply text-layout-contrast;
-    @apply py-1 pl-3;
-  }
+	.form__group-control {
+		@apply w-full;
+		@apply px-3 py-1;
+		@apply border border-gray-300 rounded;
+		@apply bg-content;
+		@apply text-content;
+		@apply focus:outline-none focus:ring-2 focus:ring-gray-200;
+	}
 }

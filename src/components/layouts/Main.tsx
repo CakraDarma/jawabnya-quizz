@@ -1,7 +1,6 @@
 import Button from '@components/button';
-import Footer from '@components/footer';
 import LoadingSpinner from '@components/loading';
-import { Navbar } from '@components/navbar';
+import { Nav } from '@components/Navbar';
 import { gameViews } from '@constants/game';
 import { QUIT_GAME } from '@constants/strings';
 import { getCategories, setView } from '@store/features/game';
@@ -13,45 +12,53 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const MainLayout: React.FC = () => {
-  const activeView = useAppSelector((state) => state.game.activeView);
-  const loading = useAppSelector((state) => state.game.categoriesLoading);
-  const initialized = useAppSelector((state) => state.game.categoriesInitialized);
-  const dispatch = useAppDispatch();
+	const activeView = useAppSelector((state) => state.game.activeView);
+	const loading = useAppSelector((state) => state.game.categoriesLoading);
+	const initialized = useAppSelector(
+		(state) => state.game.categoriesInitialized
+	);
+	const dispatch = useAppDispatch();
 
-  const isFillingForm = activeView === gameViews.INIT;
-  const isPlaying = activeView === gameViews.GAME;
-  const isComplete = activeView === gameViews.END;
+	const isFillingForm = activeView === gameViews.INIT;
+	const isPlaying = activeView === gameViews.GAME;
+	const isComplete = activeView === gameViews.END;
 
-  React.useEffect(() => {
-    if (!initialized) dispatch(getCategories()).unwrap().catch((error) => {
-      toast.error(error);
-    });
-  }, [dispatch, initialized]);
+	React.useEffect(() => {
+		if (!initialized)
+			dispatch(getCategories())
+				.unwrap()
+				.catch((error) => {
+					toast.error(error);
+				});
+	}, [dispatch, initialized]);
 
-  const handleEndGame = () => dispatch(setView(gameViews.END));
+	const handleEndGame = () => dispatch(setView(gameViews.END));
 
-  return (
-    <React.Fragment>
+	return (
+		<React.Fragment>
+			{isFillingForm && <Nav />}
 
-      {isFillingForm && <Navbar />}
+			<main>
+				{loading ? (
+					<LoadingSpinner />
+				) : (
+					<React.Fragment>
+						{isFillingForm && <InitialPage />}
+						{isPlaying && <GamePage />}
+						{isComplete && <ScorePage />}
+					</React.Fragment>
+				)}
 
-      <main>
-
-        {loading ? <LoadingSpinner /> : <React.Fragment>
-          {isFillingForm && <InitialPage />}
-          {isPlaying && <GamePage />}
-          {isComplete && <ScorePage />}
-        </React.Fragment>}
-
-        {isPlaying && <Button className="btn-error absolute top-4 right-4" onClick={handleEndGame}>
-          {QUIT_GAME}
-        </Button>}
-
-      </main>
-
-      {isFillingForm && <Footer />}
-
-    </React.Fragment>
-  )
-}
+				{isPlaying && (
+					<Button
+						className='absolute btn-error top-4 right-4'
+						onClick={handleEndGame}
+					>
+						{QUIT_GAME}
+					</Button>
+				)}
+			</main>
+		</React.Fragment>
+	);
+};
 export default MainLayout;
