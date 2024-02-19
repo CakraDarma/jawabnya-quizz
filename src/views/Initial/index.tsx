@@ -70,7 +70,12 @@ const InitialView: React.FC = () => {
 
 	return (
 		<>
-			{loading && <LoadingSpinner />}
+			{loading && (
+				<div className='flex flex-row items-center justify-center w-full h-screen'>
+					<LoadingSpinner />
+					<h1>Jawabnya Quizz</h1>
+				</div>
+			)}
 
 			{!loading && (
 				<div className='w-full mt-6'>
