@@ -6,7 +6,7 @@
   </p>
 
   <h2>
-    <a href="https://jawabnya-quizz-c8imsw8yd-cakradarma.vercel.app/" rel="nofollow">Try Now!</a>
+    <a href="https://jawabnya-quizz-871pcyuai-cakradarma.vercel.app/" rel="nofollow">Try Now!</a>
   </h2>
 </div>
 
