@@ -6,7 +6,7 @@
   </p>
 
   <h2>
-    <a href="" rel="nofollow">Try Now!</a>
+    <a href="https://jawabnya-quizz-c8imsw8yd-cakradarma.vercel.app/" rel="nofollow">Try Now!</a>
   </h2>
 </div>
 
@@ -16,14 +16,14 @@ Web-based application developed using React, Next.js, Next UI, and Redux Toolkit
   <h2>Screenshots</h2>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./screenshots/1settings.png">
-    <img width="80%" alt="Game settings selection" src="./screenshots/light-mobile-start.png">
+    <img width="100%" alt="Game settings selection" src="./screenshots/1settings.png">
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./screenshots/2game.png">
-    <img width="80%" alt="Playing the game" src="./screenshots/light-mobile-playing.png">
+    <img width="100%" alt="Playing the game" src="./screenshots/2game.png">
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./screenshots/4game.png">
-    <img width="80%" alt="Results" src="./screenshots/light-mobile-end.png">
+    <source media="(prefers-color-scheme: dark)" srcset="./screenshots/4results.png">
+    <img width="100%" alt="Results" src="./screenshots/4results.png">
   </picture>
 </div>
