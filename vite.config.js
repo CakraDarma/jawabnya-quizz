@@ -7,7 +7,7 @@ import { resolve } from 'path';
 
 export default defineConfig(() => {
 	return {
-		base: '/',
+		base: '/login',
 		build: {
 			outDir: 'build',
 		},

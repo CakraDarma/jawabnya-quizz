@@ -9,6 +9,7 @@ import {
 	Avatar,
 	Image,
 } from '@nextui-org/react';
+import { Link } from 'react-router-dom';
 
 export const Nav = () => {
 	return (
@@ -38,7 +39,7 @@ export const Nav = () => {
 						<DropdownItem key='settings'>My Settings</DropdownItem>
 						<DropdownItem key='settings'>Results</DropdownItem>
 						<DropdownItem key='logout' color='danger'>
-							Log Out
+							<Link to='/login'>Log Out</Link>
 						</DropdownItem>
 					</DropdownMenu>
 				</Dropdown>
