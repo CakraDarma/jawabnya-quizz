@@ -20,9 +20,11 @@ const ResultsView: React.FC = () => {
 
 				<div className='flex flex-row justify-between w-full '>
 					<div className='flex flex-row justify-center gap-2'>
-						<h3 className='text-2xl sm:text-3xl'>Answered:</h3>
+						<h3 className='text-2xl sm:text-3xl'>Score:</h3>
 					</div>
-					{/* <span className='text-2xl text-gray-600 sm:text-3xl'>{score}</span> */}
+					<span className='text-2xl text-gray-600 sm:text-3xl'>
+						{(score / questions.length) * 100}/100
+					</span>
 				</div>
 				<div className='flex flex-row justify-between w-full '>
 					<div className='flex flex-row justify-center gap-2'>

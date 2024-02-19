@@ -31,7 +31,7 @@ const MainLayout: React.FC = () => {
 	}, [dispatch, initialized]);
 
 	return (
-		<div className=''>
+		<>
 			<Nav />
 			<main className='px-6 lg:px-20 3xl:px-0  mx-auto max-w-[1280px]'>
 				{loading ? (
@@ -46,7 +46,7 @@ const MainLayout: React.FC = () => {
 					</>
 				)}
 			</main>
-		</div>
+		</>
 	);
 };
 export default MainLayout;

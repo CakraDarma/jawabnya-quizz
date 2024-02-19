@@ -1,4 +1,4 @@
-import type { Answer } from '@models/game';
+import type { Answer } from 'types/game';
 import React from 'react';
 import classnames from 'classnames';
 

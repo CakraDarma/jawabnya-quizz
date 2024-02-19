@@ -10,7 +10,7 @@ import type {
 	QuestionDifficultyOptions,
 	QuestionNumberOptions,
 	QuestionTypeOptions,
-} from '@models/game';
+} from 'types/game';
 
 import { getQuestions } from '@store/features/game';
 import { useAppDispatch, useAppSelector } from '@store/index';
@@ -89,6 +89,7 @@ const InitialView: React.FC = () => {
 									label='Select number of questions'
 									className='w-full shadow-[8px_8px_0px_0px_rgba(0,0,0)] rounded-md'
 									{...register('questionNumber')}
+									defaultSelectedKeys={[`${questionNumber}`]}
 								>
 									{questionNumberSetting.map((option) => (
 										<SelectItem key={option.code} value={option.code}>
@@ -104,6 +105,7 @@ const InitialView: React.FC = () => {
 									color='warning'
 									className='w-full shadow-[8px_8px_0px_0px_rgba(0,0,0)] rounded-md'
 									{...register('questionDifficulty')}
+									defaultSelectedKeys={[`${questionDifficulty}`]}
 								>
 									{questionDiffSetting.map((option) => (
 										<SelectItem key={option.code} value={option.code}>
@@ -119,6 +121,7 @@ const InitialView: React.FC = () => {
 									className='w-full shadow-[8px_8px_0px_0px_rgba(0,0,0)] rounded-md'
 									color='warning'
 									{...register('questionCategory')}
+									defaultSelectedKeys={[`${questionCategory}`]}
 								>
 									{categories.map((option) => (
 										<SelectItem key={option.code} value={option.code}>
@@ -134,6 +137,7 @@ const InitialView: React.FC = () => {
 									className='w-full shadow-[8px_8px_0px_0px_rgba(0,0,0)] rounded-md'
 									color='warning'
 									{...register('questionType')}
+									defaultSelectedKeys={[`${questionType}`]}
 								>
 									{questionTypeSetting.map((option) => (
 										<SelectItem key={option.code} value={option.code}>
@@ -143,7 +147,7 @@ const InitialView: React.FC = () => {
 								</Select>
 							</div>
 
-							<div className='form__actions'>
+							<div className='mx-auto'>
 								<button
 									type='submit'
 									className='bg-blue-custom  shadow-[6px_6px_0px_0px_rgba(22,57,89)] p-4 rounded-md text-black font-bold'

@@ -7,7 +7,7 @@ import { resolve } from 'path';
 
 export default defineConfig(() => {
 	return {
-		base: '/jawabnya-quizz/',
+		base: '/',
 		build: {
 			outDir: 'build',
 		},

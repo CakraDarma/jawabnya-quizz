@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		scroll-behavior: smooth;
+	}
+	#root {
+		@apply bg-background;
+		@apply min-h-screen;
+	}
+
 	@font-face {
 		font-family: 'CabinetGrotesk-Variable';
 		src: url('./assets/fonts/CabinetGrotesk-Variable.ttf') format('truetype');
@@ -23,42 +34,5 @@
 
 	p {
 		@apply font-medium font-Cabinet text-text;
-	}
-}
-
-@layer components {
-	body {
-		@apply bg-background;
-	}
-
-	#root {
-		@apply h-dvh;
-		@apply font-bold font-Cabinet;
-		@apply flex flex-col justify-between;
-	}
-
-	.form__actions {
-		@apply mx-auto;
-	}
-
-	.form__group {
-		@apply w-full;
-		@apply mb-4 last:mb-1;
-	}
-
-	.form__group-label {
-		@apply block;
-		/* @apply inline-block; */
-		@apply mb-3;
-		@apply text-primary;
-	}
-
-	.form__group-control {
-		@apply w-full;
-		@apply px-3 py-1;
-		@apply border border-gray-300 rounded;
-		@apply bg-content;
-		@apply text-content;
-		@apply focus:outline-none focus:ring-2 focus:ring-gray-200;
 	}
 }

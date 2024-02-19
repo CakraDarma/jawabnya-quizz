@@ -18,7 +18,7 @@ const AnswersGrid: React.FC = () => {
 			case 0:
 				return 'bg-blue-custom';
 			case 1:
-				return 'bg-red-custom';
+				return 'bg-pink-custom';
 			case 2:
 				return 'bg-green-custom';
 			case 3:
